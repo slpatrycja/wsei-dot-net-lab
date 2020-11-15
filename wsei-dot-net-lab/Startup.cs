@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using wsei_dot_net_lab.Database;
 
 namespace wsei_dot_net_lab
 {
@@ -24,6 +26,8 @@ namespace wsei_dot_net_lab
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<ExchangesDbContext>(options =>
+                options.UseNpgsql(Configuration.GetConnectionString("ExchangeThings")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
