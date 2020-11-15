@@ -10,9 +10,5 @@ namespace wsei_dot_net_lab.Database
         {
         }
         public DbSet<ItemEntity> Items { get; set; }
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            // fluent configuration ...
-        }
     }
 }

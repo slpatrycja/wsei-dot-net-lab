@@ -1,7 +1,9 @@
+using wsei_dot_net_lab.Entities;
+
 namespace wsei_dot_net_lab.Models
 {
     public class AddNewItemResponse
     {
-        public bool IsSuccessful { get; set; }
+        public ItemEntity[] Items { get; set; }
     }
 }
